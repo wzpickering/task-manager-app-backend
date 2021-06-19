@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const port = process.env.PORT || 3001
 
 app.use(cors());
 app.use(express.json());
@@ -27,6 +28,6 @@ if(process.env.Node_ENV ==='production'){
   })
 }
 
-app.listen(3001, () => {
-  console.log("successfully connected to port 3001");
+app.listen(port, () => {
+  console.log(`successfully connected to port ${port}`);
 });
